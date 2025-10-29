@@ -1,0 +1,89 @@
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ShoppingCart } from "lucide-react";
+
+const products = [
+  {
+    id: 1,
+    name: "Premium Dog Food",
+    price: "$45.99",
+    category: "Food",
+    image: "🦴",
+  },
+  {
+    id: 2,
+    name: "Cat Scratching Post",
+    price: "$29.99",
+    category: "Toys",
+    image: "🐱",
+  },
+  {
+    id: 3,
+    name: "Pet Carrier Bag",
+    price: "$39.99",
+    category: "Accessories",
+    image: "👜",
+  },
+  {
+    id: 4,
+    name: "Dental Care Kit",
+    price: "$24.99",
+    category: "Healthcare",
+    image: "🪥",
+  },
+  {
+    id: 5,
+    name: "Interactive Pet Toy",
+    price: "$19.99",
+    category: "Toys",
+    image: "🎾",
+  },
+  {
+    id: 6,
+    name: "Grooming Kit",
+    price: "$34.99",
+    category: "Grooming",
+    image: "✂️",
+  },
+];
+
+export const PetShop = () => {
+  return (
+    <section id="shop" className="py-20 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Pet Shop
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Premium quality products for your beloved pets. From nutrition to toys, we have everything.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {products.map((product) => (
+            <Card 
+              key={product.id} 
+              className="p-6 hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:-translate-y-1 bg-gradient-to-b from-card to-muted/20"
+            >
+              <div className="text-6xl mb-4 text-center">{product.image}</div>
+              <div className="space-y-3">
+                <div className="inline-block bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">
+                  {product.category}
+                </div>
+                <h3 className="text-xl font-semibold">{product.name}</h3>
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-bold text-primary">{product.price}</span>
+                  <Button size="sm" className="gap-2">
+                    <ShoppingCart className="h-4 w-4" />
+                    Add
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
