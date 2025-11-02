@@ -7,6 +7,7 @@ import { PetManagement } from "@/components/dashboard/PetManagement";
 import { MyCart } from "@/components/dashboard/MyCart";
 import { MyBookings } from "@/components/dashboard/MyBookings";
 import { ChatWithVet } from "@/components/dashboard/ChatWithVet";
+import { AIChatbot } from "@/components/dashboard/AIChatbot";
 import { User } from "@supabase/supabase-js";
 
 const OwnerDashboard = () => {
@@ -69,6 +70,8 @@ const OwnerDashboard = () => {
           </TabsContent>
         </Tabs>
       </div>
+      
+      <AIChatbot />
     </div>
   );
 };
